@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>Full Body Gui</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Full Body Gui">
+<meta name="theme-color" content="#16130F">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAADdklEQVR4nO3dPY7UQBDF8fJAtAkBEicgHqQ9BFyIY3Ch5RBIbMwJRppgEjIEUa+M1x/dnm7Xq9fvny7MuvtHeTzW4h2sQR/ev/vb4nV76HK9DTVfr9qLCbV+NbDvegGhHtde7F1/SbB+lUKfSr+BcH0r3f8iYOFiVOKQNe6CxW3rlL05wcLFbstnFVi4MVpzWgQWbqyWvIqvolWsZoE1vTGbc3sFLNzYTf1Oa19UMRs76j2YvBdgTS9XyVMTTJ6AyRvMdHpm7q33AbTs+fOfL7l/9vz9zVPLY/GKZoJLMHNjQB8i47ZAXSoqdkjgI2GnRYMOBewJOy0KdAhgJNhp6NDwn4ORcc3wjw8aGH3zUsjHCXmKRt6wrdBO2XATHBnXDO/4oYDRNmdvSOuAAUbalBqhrAcCGGUzaoewLndghE1omff63IFV21yBvf91H5XnOt2Ae8FNea3XBbg33JTHuqv+RMevr59Wv/7x28+a3y50R+1VtVuVWwec+v38o8vpHfdwfsy6nVkDucopOhfXLH9xrJWsv2Rfl9LHJPIETJ6AG/VwfnxCeDsScIPGsN7IAq7cHKgnsoDJEzB5AiZPwOQJmDwBkydg8gRMnuv/8Pe+y9NDbhPcG67Xel2Ae8NNeaxb78HkuQD3+mM7Hut2m+DekL3W63oVzYiMdn2h92DyBEyegMkTMHkCJk/A5AmYPAGTJ+DKzd288byhI+AGjUG979ZRP9LfM2/YlCaYPAGTVwW45FEDvT+n4+i9qjbBOQfTO27qyL1ye150j49S8niWtNt7MNqDs1vntV7Xi6xekD3Xqato8tyB2afYe33uwGb+m9AqhHVBAJthbEbNUNYDA2yGsyn3hrQOKGAzrM3ZE9rxQ/5irFSkmyFosCm4CR6HumnTkI8TGtgMe/PM8I8P+hQ9DemUjQ6bCgWc0m8Azy8kcOpI6GiwqdDA41pgR0UdRwM8Vwk6A+Zc1MAqwMckdV8CJk/A5AmYPAGTJ2DyBEze6XK9Dd4HodqlCSZPwOSdzMx0mubscr0NmmDyBEzeC7BO01wlT00wef8Ba4o5Gju+mmAhx27qN3uKFnLM5tz0HkzeIrCmOFZLXqsTLOQYrTltnqKFjN2WTxGefsQWp9zBK7rI0jRjVOJQfBUtZN9K9/8uLJ2yj2vvYFWbRmHXr8bZ8h+9G1IH5KYpjwAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAADdklEQVR4nO3dPY7UQBDF8fJAtAkBEicgHqQ9BFyIY3Ch5RBIbMwJRppgEjIEUa+M1x/dnm7Xq9fvny7MuvtHeTzW4h2sQR/ev/vb4nV76HK9DTVfr9qLCbV+NbDvegGhHtde7F1/SbB+lUKfSr+BcH0r3f8iYOFiVOKQNe6CxW3rlL05wcLFbstnFVi4MVpzWgQWbqyWvIqvolWsZoE1vTGbc3sFLNzYTf1Oa19UMRs76j2YvBdgTS9XyVMTTJ6AyRvMdHpm7q33AbTs+fOfL7l/9vz9zVPLY/GKZoJLMHNjQB8i47ZAXSoqdkjgI2GnRYMOBewJOy0KdAhgJNhp6NDwn4ORcc3wjw8aGH3zUsjHCXmKRt6wrdBO2XATHBnXDO/4oYDRNmdvSOuAAUbalBqhrAcCGGUzaoewLndghE1omff63IFV21yBvf91H5XnOt2Ae8FNea3XBbg33JTHuqv+RMevr59Wv/7x28+a3y50R+1VtVuVWwec+v38o8vpHfdwfsy6nVkDucopOhfXLH9xrJWsv2Rfl9LHJPIETJ6AG/VwfnxCeDsScIPGsN7IAq7cHKgnsoDJEzB5AiZPwOQJmDwBkydg8gRMnuv/8Pe+y9NDbhPcG67Xel2Ae8NNeaxb78HkuQD3+mM7Hut2m+DekL3W63oVzYiMdn2h92DyBEyegMkTMHkCJk/A5AmYPAGTJ+DKzd288byhI+AGjUG979ZRP9LfM2/YlCaYPAGTVwW45FEDvT+n4+i9qjbBOQfTO27qyL1ye150j49S8niWtNt7MNqDs1vntV7Xi6xekD3Xqato8tyB2afYe33uwGb+m9AqhHVBAJthbEbNUNYDA2yGsyn3hrQOKGAzrM3ZE9rxQ/5irFSkmyFosCm4CR6HumnTkI8TGtgMe/PM8I8P+hQ9DemUjQ6bCgWc0m8Azy8kcOpI6GiwqdDA41pgR0UdRwM8Vwk6A+Zc1MAqwMckdV8CJk/A5AmYPAGTJ2DyBEze6XK9Dd4HodqlCSZPwOSdzMx0mubscr0NmmDyBEzeC7BO01wlT00wef8Ba4o5Gju+mmAhx27qN3uKFnLM5tz0HkzeIrCmOFZLXqsTLOQYrTltnqKFjN2WTxGefsQWp9zBK7rI0jRjVOJQfBUtZN9K9/8uLJ2yj2vvYFWbRmHXr8bZ8h+9G1IH5KYpjwAAAABJRU5ErkJggg==">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#16130F;--card:#1F1B16;--ember:#E8590C;--soft:#F2873E;--ink:#F3EEE7;--muted:#8C8175;--line:#2A251E;--done:#4A4237;}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{background:var(--bg);overscroll-behavior:none}
+  body{color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;max-width:500px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 16px) 16px calc(env(safe-area-inset-bottom) + 28px);min-height:100vh;user-select:none;}
+  .logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .logo svg{width:30px;height:30px;color:var(--ember);flex-shrink:0;}
+  .logo .t1{font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;line-height:1;}
+  .logo .t2{font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;line-height:1;color:var(--soft);}
+  .tabs{display:flex;gap:5px;margin-bottom:6px;}
+  .tab{flex:1;text-align:center;padding:8px 0;border-radius:9px;background:var(--card);cursor:pointer;transition:.15s;}
+  .tab.active{background:var(--ember);}
+  .tab .tn{font-family:'Bebas Neue';font-size:15px;letter-spacing:.5px;display:block;}
+  .tab.active .tn{color:#16130F;}
+  .tab .dot{display:block;width:4px;height:4px;border-radius:50%;margin:4px auto 0;background:var(--line);}
+  .tab .dot.full{background:var(--soft);}
+  .tab.active .dot.full{background:#16130F;}
+  .tab.vol .tn{color:var(--soft);}
+  .tab.vol.active .tn{color:#16130F;}
+  .daytitle{font-family:'Bebas Neue';font-size:21px;letter-spacing:.5px;margin:16px 1px 8px;color:var(--muted);}
+  .ex{display:flex;align-items:center;gap:11px;padding:11px 2px;border-bottom:1px solid var(--line);}
+  .check{width:21px;height:21px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:.15s;cursor:pointer;}
+  .check svg{width:11px;height:11px;opacity:0;transition:.15s;}
+  .ex.done .check{background:var(--ember);border-color:var(--ember);}
+  .ex.done .check svg{opacity:1;}
+  .nm{flex:1;font-size:14.5px;font-weight:500;cursor:pointer;line-height:1.3;}
+  .ex.done .nm{color:var(--muted);text-decoration:line-through;}
+  .sr{font-family:'Bebas Neue';font-size:16px;color:var(--muted);white-space:nowrap;letter-spacing:.5px;}
+  .wt{width:42px;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--soft);font-family:'Inter';font-size:13px;font-weight:600;padding:3px 0 2px;text-align:center;outline:none;transition:.15s;}
+  .wt:focus{border-bottom-color:var(--ember);}
+  .wt::placeholder{color:var(--done);font-weight:400;}
+  .note{font-size:11px;color:var(--muted);line-height:1.5;margin:2px 1px 14px;}
+  .vrow{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .vname{width:96px;font-size:12.5px;font-weight:500;flex-shrink:0;}
+  .vbar{flex:1;height:18px;background:var(--card);border-radius:5px;overflow:hidden;}
+  .vbar>i{display:block;height:100%;background:linear-gradient(90deg,var(--ember),var(--soft));border-radius:5px;}
+  .vval{font-family:'Bebas Neue';font-size:16px;color:var(--soft);width:50px;text-align:right;}
+  .vval small{font-size:8px;color:var(--muted);font-family:'Inter';}
+  .vtot{margin-top:14px;padding:12px;background:var(--card);border-radius:10px;text-align:center;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+  .vtot b{font-family:'Bebas Neue';font-size:26px;color:var(--ember);display:block;letter-spacing:1px;}
+  .reset{display:block;width:100%;margin-top:18px;padding:11px;background:transparent;border:1px solid var(--line);border-radius:9px;color:var(--muted);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;cursor:pointer;}
+  .foot{text-align:center;margin-top:16px;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;line-height:1.6;}
+  .foot b{color:var(--soft);}
+</style>
+</head>
+<body>
+  <div class="logo">
+    <svg viewBox="0 0 100 40" fill="currentColor"><rect x="30" y="17" width="40" height="6" rx="3"/><rect x="18" y="9" width="8" height="22" rx="4"/><rect x="9" y="4" width="8" height="32" rx="4"/><rect x="74" y="9" width="8" height="22" rx="4"/><rect x="83" y="4" width="8" height="32" rx="4"/></svg>
+    <div class="t1">FULL BODY</div><div class="t2">GUI</div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="content"></div>
+  <button class="reset" id="reset">Zerar semana</button>
+  <div class="foot"><b>Constância &gt; intensidade</b></div>
+<script>
+const CHK='<svg viewBox="0 0 24 24" fill="none" stroke="#16130F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+const DAYS=[
+ {lbl:"SEG",t:"SEGUNDA · FULL BODY",ex:[
+   ["Bíceps Scott","3×10","biceps"],["Tríceps barra V","3×12","triceps"],
+   ["Cadeira flexora","3×12","posterior"],["Agachamento (V-Squat/Smith)","4×10","quadriceps"],
+   ["Puxada alta neutra","3×10","costas"],["Superior do peito","3×10","peito"],
+   ["Desenvolvimento halter","3×10","ombro"] ]},
+ {lbl:"TER",t:"TERÇA · CARDIO + CORE",ex:[
+   ["Escada","12 min","cardio"],["Abdômen corda","3×15","abdomen"],
+   ["Panturrilha perna esticada","4×15","panturrilha"] ]},
+ {lbl:"QUA",t:"QUARTA · FULL BODY",ex:[
+   ["Tríceps livre","3×12","triceps"],["Tríceps francês corda","3×12","triceps"],
+   ["Bíceps polia atrás do corpo","3×12","biceps"],["Cadeira extensora","3×12","quadriceps"],
+   ["Stiff","3×10","posterior"],["Remada peito apoiado","3×10","costas"],
+   ["Elevação lateral","4×15","ombro"] ]},
+ {lbl:"QUI",t:"QUINTA · CARDIO + CORE",ex:[
+   ["Escada","12 min","cardio"],["Abdômen corda","3×15","abdomen"],
+   ["Panturrilha perna esticada","4×15","panturrilha"] ]},
+ {lbl:"SEX",t:"SEXTA · FULL BODY",ex:[
+   ["Bíceps martelo","3×10","biceps"],["Mesa flexora","3×12","posterior"],
+   ["Agachamento padrão","4×10","quadriceps"],["Puxada baixa neutra","3×10","costas"],
+   ["Superior do peito","3×10","peito"],["Desenvolvimento halter","3×10","ombro"],
+   ["Crucifixo invertido","3×15","ombro"] ]},
+];
+const MUSC=[["Ombro","ombro"],["Quadríceps","quadriceps"],["Costas","costas"],["Bíceps","biceps"],["Tríceps","triceps"],["Posterior","posterior"],["Panturrilha","panturrilha"],["Peito","peito"],["Abdômen","abdomen"]];
+function volume(){const v={};DAYS.forEach(d=>d.ex.forEach(e=>{const m=e[2],s=parseInt(e[1]);if(!isNaN(s)&&m!=="cardio")v[m]=(v[m]||0)+s;}));return v;}
+let active=0,state={};
+function load(){try{const s=localStorage.getItem("fbgui");if(s)state=JSON.parse(s);}catch(e){}}
+function save(){try{localStorage.setItem("fbgui",JSON.stringify(state));}catch(e){}}
+function dk(d,i){return"c"+d+"-"+i;} function wk(d,i){return"w"+d+"-"+i;}
+function dayDone(d){return DAYS[d].ex.every((_,i)=>state[dk(d,i)]);}
+function renderTabs(){
+ const el=document.getElementById("tabs");el.innerHTML="";
+ DAYS.forEach((d,i)=>{const t=document.createElement("div");t.className="tab"+(i===active?" active":"");
+  t.innerHTML='<span class="tn">'+d.lbl+'</span><span class="dot'+(dayDone(i)?" full":"")+'"></span>';
+  t.onclick=()=>{active=i;render();};el.appendChild(t);});
+ const vt=document.createElement("div");vt.className="tab vol"+(active===99?" active":"");
+ vt.innerHTML='<span class="tn">VOL</span><span class="dot"></span>';
+ vt.onclick=()=>{active=99;render();};el.appendChild(vt);
+}
+function render(){
+ renderTabs();const c=document.getElementById("content");c.innerHTML="";
+ if(active===99){renderVol(c);return;}
+ const d=DAYS[active];
+ const h=document.createElement("div");h.className="daytitle";h.textContent=d.t;c.appendChild(h);
+ d.ex.forEach((e,i)=>{
+  const done=!!state[dk(active,i)];const cardio=e[2]==="cardio";
+  const row=document.createElement("div");row.className="ex"+(done?" done":"");
+  row.innerHTML='<div class="check">'+CHK+'</div><div class="nm">'+e[0]+'</div><div class="sr">'+e[1]+'</div>'+
+   (cardio?"":'<input class="wt" inputmode="decimal" placeholder="kg" value="'+(state[wk(active,i)]||"")+'">');
+  const toggle=()=>{state[dk(active,i)]=!state[dk(active,i)];save();render();};
+  row.querySelector(".check").onclick=toggle;row.querySelector(".nm").onclick=toggle;
+  const inp=row.querySelector(".wt");
+  if(inp){inp.onclick=ev=>ev.stopPropagation();inp.oninput=ev=>{state[wk(active,i)]=ev.target.value;save();};}
+  c.appendChild(row);
+ });
+}
+function renderVol(c){
+ const n=document.createElement("div");n.className="note";n.textContent="Séries por grupo na semana. Faixa boa: ~10–20 por grupo.";c.appendChild(n);
+ const v=volume();const max=Math.max(...MUSC.map(m=>v[m[1]]||0));let total=0;
+ MUSC.forEach(m=>{const val=v[m[1]]||0;total+=val;
+  const r=document.createElement("div");r.className="vrow";
+  r.innerHTML='<div class="vname">'+m[0]+'</div><div class="vbar"><i style="width:'+(max?val/max*100:0)+'%"></i></div><div class="vval">'+val+'<small> sér</small></div>';
+  c.appendChild(r);});
+ const t=document.createElement("div");t.className="vtot";t.innerHTML='<b>'+total+'</b> séries / semana';c.appendChild(t);
+}
+document.getElementById("reset").onclick=()=>{if(confirm("Zerar marcações (mantém cargas)?")){Object.keys(state).forEach(k=>{if(k[0]==="c")delete state[k];});save();render();}};
+load();render();
+</script>
+</body>
+</html>
